@@ -1,4 +1,4 @@
-import MovieCard from "../components/MovieCard";
+import MovieCard from "../components/MovieCard"
 import { useState } from "react";
 
 function Home() {
