@@ -26,9 +26,21 @@ function Home() {
 
   const handleSearch = () => {
     e.preventDefault();
-   
-    setSearchQuery;
-  };
+   if(!searchQuery,trim()) return
+   if (loading) return
+   setLoading(true)
+
+try {
+  const searchResults = searchMovies(searchQuery)  
+  setMovies(searchResults)
+    setError(null)
+}
+catch (error) {
+  console.log(error)
+  setError("Failed to search movies. Please try again.")}
+finally {setLoading(false)}
+
+  }
 
   return (
     <div className="home">
